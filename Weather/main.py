@@ -1,23 +1,34 @@
-from api_calls import *
+from api_calls import calculateData
 import json
-start=2017
-END=2022
-temperature=[]
-snowfall=[]
-rainfall=[]
-windspeed=[]
+from db_script import *
+import mysql.connector
 
-while (start<END):
-    beginning=str(start)+"-01-01"
-    ending=str(start)+"-01-08"
-    data=getInfo("Toronto",beginning,ending)
-    temps,snow,rain,wind,days=ExtractInfo(data)
-    t,s,r,w=ProcessData(temps,snow,rain,wind,days)
-    temperature.append(t)
-    snowfall.append(s)
-    rainfall.append(r)
-    windspeed.append(w)
-    start+=1
-temps,snow,rain,wind=ProcessData(temperature,snowfall,rainfall,windspeed,days)
-print(f"Total avgs: {temps}, {snow}, {rain}, {wind}")
+end="-01-08"
+start="-01-01"
+location="Ottawa_Ontario"
+week=1
+Loc=checkLocation(location)
+if (Loc!=-1):
+    temp,snow,rain,wind=searchData(location,week)
+    if temp is None:
+        temp,snow,rain,wind=calculateData(location,start,end)
+        addData(location, week, temp, snow, rain, wind)
+else:
+    addLocation(location)
+    addLocationTable(location)
+    temp,snow,rain,wind=calculateData(location,start,end)
+    addData(location, week, temp, snow, rain, wind)
+
+print(temp)
+print(snow)
+print(rain)
+print(wind)
+cursor.close()
+
+
+
+
+
+
+
 

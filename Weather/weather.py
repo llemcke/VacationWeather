@@ -1,3 +1,4 @@
+
 class Weather:
     def __init__(self, location, rain, snow, wind, temperature):
         self.location=location
@@ -6,4 +7,5 @@ class Weather:
         self.wind=wind
         self.temperature=temperature
         return
+    
     
