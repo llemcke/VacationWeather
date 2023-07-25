@@ -1,29 +1,31 @@
-from api_calls import calculateData
-import json
-from db_script import *
-import mysql.connector
-
+from api_calls import apiCalls
+from db_script import dbAccess
+from weather import Weather
+api=apiCalls()
+access=dbAccess()
+weatherObj=Weather(None,None,None,None,None)
 end="-01-08"
 start="-01-01"
-location="Ottawa_Ontario"
+location="London_Ontario"
 week=1
-Loc=checkLocation(location)
-if (Loc!=-1):
-    temp,snow,rain,wind=searchData(location,week)
-    if temp is None:
-        temp,snow,rain,wind=calculateData(location,start,end)
-        addData(location, week, temp, snow, rain, wind)
-else:
-    addLocation(location)
-    addLocationTable(location)
-    temp,snow,rain,wind=calculateData(location,start,end)
-    addData(location, week, temp, snow, rain, wind)
 
-print(temp)
-print(snow)
-print(rain)
-print(wind)
-cursor.close()
+
+Loc=access.checkLocation(location)
+if (Loc!=-1):
+    weatherObj=access.searchData(location,week)
+    if (weatherObj.temperature == 999):
+        weatherObj=api.calculateData(location,start,end)
+        access.addData(weatherObj,week)
+else:
+    access.addLocation(location)
+    access.addLocationTable(location)
+    weatherObj=api.calculateData(location,start,end)
+    access.addData(weatherObj, week)
+
+print(weatherObj.temperature)
+print(weatherObj.snow)
+print(weatherObj.rain)
+print(weatherObj.wind)
 
 
 
