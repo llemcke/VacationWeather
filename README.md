@@ -26,10 +26,10 @@ Created a Flask file to manage the backend. So far is being used to host, but wi
 
 **How to fix issues**:
 -Debug and find what messed up date selector
--Work with "<form>" tag and POST and GET methods
+-Work with form tag and POST and GET methods
 
 **Challenges during this section**:
 -Had to learn how to use Bootstrap as well as set up a flask file to host 
--Difficult time trying to interact backend with front end. I believe that working with the "<form>" tag and GET and POST methods is the fix I need. I was debating how to go about getting info from the front end to the back end and after research came up with 3 solutions: 1. Use js2py to translate javascript code to python and call functions from formData. 2. Use ajax to do the same thing, 3. Focus on mostly using flask to grab and process inputs and outputs.
+-Difficult time trying to interact backend with front end. I believe that working with the form tag and GET and POST methods is the fix I need. I was debating how to go about getting info from the front end to the back end and after research came up with 3 solutions: 1. Use js2py to translate javascript code to python and call functions from formData. 2. Use ajax to do the same thing, 3. Focus on mostly using flask to grab and process inputs and outputs.
 
 
