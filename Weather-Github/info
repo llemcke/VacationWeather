@@ -1,0 +1,55 @@
+https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/London%20Ontario?unitGroup=metric&key=GALF82QEG92EWFFSJTU36BKHG&contentType=json
+
+elements=name%2Ctemp%2Cprecip%2Csnow%2Cwindspeedmean&
+Problems:
+Date adjuster does not work when it is end of month. Decided to scrap rain wind and snow condition picker and only go with temperature as the others are minor details.
+<script>
+    /*
+{{weather[item].location}}
+{{weather[item].getTemp()}}
+{{weather[item].rain}}*/
+</script>
+
+<div icon="sunny" data-label="Sunny">
+  <span class="sun"></span>
+</div>
+
+<div icon="cloudy" data-label="Perfect">
+  <span class="cloud"></span>
+  <span class="cloud"></span>
+</div>
+
+<div icon="snowy" data-label="Chilly">
+  <span class="snowman"></span>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+
+<div icon="stormy" data-label="Soggy">
+  <span class="cloud"></span>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+
+<div icon="supermoon" data-label="Cool!">
+  <span class="moon"></span>
+  <span class="meteor"></span>
+</div>
