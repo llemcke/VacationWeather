@@ -60,4 +60,17 @@ I have noticed when testing that when data is pulled from the database, it is a 
 - It took me a while to figure out using flask as a backend, but once I understood passing variables, it became much easier.
 
 
+**August 24th**
+The last section of this project I added the finishing touches and used Repl.it to upload the project, and I'm using a ping bot to keep the web app up and running. As this is a project, this is the easiest free method to display this project as a web application. 
 
+**Changes**
+- Implemented Geoapify for autocompletion of locations
+- Added Data validation
+- Uploaded to repl.it and used a ping bot to keep it online
+- Changed the form, no longer using snow, rain, neither, and wind radio button and check boxes. Instead one checkbox "avoid precipitation" is being used when ranking the locations.
+
+**Fixes**
+- Some locations were not working with the database because of special characters and although I replaced all commas and blank spaces with underscores, I missed dashes. Now using a python library to convert special characters into regualr ones, this bug does not occur.
+- Any unintended inputs will make the user re-input to avoid errors.
+
+  [Try out the finished project](https://vacationweather.llemcke.repl.co/)
