@@ -1,16 +1,20 @@
 # VacationWeather
 Flask webapp that allows user to check multiple locations for historical weather data for planning a vacation. Uses Flask, Python, HTML, CSS, Bootstrap, MySQL, JavaScript, and various python libraries.
 [Try out the finished project](https://vacationweather.llemcke.repl.co/)
-**Important notes**
+
+**Important notes:**
 Using a database to store information as a weather object has proven to be very efficient in saving API call costs, as well as time.
+
 **For 1 Location:**
 - New Entry into existing table (New API call): 3.4 seconds
 - New Table and Entry(New API Call): 3.5 seconds
 - Search and pull data from database (No API call): 0.3 seconds
+- 
 **For 2 Locations:**
   - New Table and Entry(New API Call): 6.8 seconds
   - Search and pull data from database (No API call): 0.6 seconds.
   Approx. 1/10th of the time.
+
 **Further ideas for future:**
 As the database grows with every user entry, the time for calculation will be reduced in comparison to API calls, however could increase slightly due to amount of entries and tables in the database. A future improvement I will look to make is to design the database to make searching more efficient. This could be something such as a table the stores the top 10 or 15 locations searched, and search there before searching the main locations table. I could also add a counter to each location table and have it clear entries that are below a certain threshold after a certain number of entries have been made. 
 
